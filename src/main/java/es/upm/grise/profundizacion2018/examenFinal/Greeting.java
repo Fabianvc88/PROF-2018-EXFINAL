@@ -3,10 +3,15 @@ package es.upm.grise.profundizacion2018.examenFinal;
 import java.util.Calendar;
 
 public class Greeting {
+  MyCalendar calendar;
+
+  public Greeting(MyCalendar calendar){
+    this.calendar = calendar;
+  }
 	
 	public String getGreeting( Language language ) {
 		// Get current hour
-		Calendar calendar = Calendar.getInstance();
+		//Calendar calendar = Calendar.getInstance();
 		int hour = calendar.get( Calendar.HOUR_OF_DAY );
 		
 		// Find out the greeting language
