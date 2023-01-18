@@ -4,9 +4,11 @@ package es.upm.grise.profundizacion2018.examenFinal;
 
 public class Greeting {
   MyCalendar calendar;
+  Message message;
 
-  public Greeting(MyCalendar calendar){
+  public Greeting(MyCalendar calendar, Message message){
     this.calendar = calendar;
+    this.message = message;
   }
 	
 	public String getGreeting( Language language ) {
@@ -16,7 +18,7 @@ public class Greeting {
 		
 		// Find out the greeting language
 		if ( language == null )
-			language = Message.getDefaultLanguage();
+			language = message.getDefaultLanguage();
 		
 		// Get the moment of the day
 		TimeOfTheDay moment;
@@ -28,7 +30,7 @@ public class Greeting {
 			moment = TimeOfTheDay.EVENING;
 			
 		// Return the message		
-		return Message.getMessage( moment, language );
+		return message.getMessage( moment, language );
 	}
 
 }
